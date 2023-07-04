@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRINZZ</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: linear-gradient(147deg, rgb(193, 5, 5), rgb(245, 78, 214));
+    }
+
+    .image-container {
+      display: block;
+      position: relative;
+      width: 100%;
+      max-width: 100%; /* Adjust the maximum width as per your preference */
+      margin: 0 auto;
+      max-height: 100%;
+    }
+
+    .text-center{
+        animation: animation-2 5s ease-in 0.2s infinite ;
+}
+@keyframes animation-2 {
+   0%{color: rgb(37, 23, 192);}
+   25%{color: rgb(12, 102, 141);}
+   50%{color: rgb(98, 77, 122);}
+   75%{color: rgb(88, 193, 227);}
+   100%{color: rgb(125, 123, 237);}
+}
+    
+
+    .image {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    .image.active {
+      display: block;
+    }
+
+    #navigation {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .navigation-button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #5fc5d7;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .volume-control {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="text-center"><marquee>GOLU DIDIIIIEEEEEEEEEEE</marquee></h1>
+  <div class="container">
+    <p>Oh, you're a magnificent force of nature, a dazzling constellation of beauty and laughter! Your smile lights up the room like a thousand suns, and your eyes twinkle with mischief, teasing the world with their irresistible charm. Your sense of humor is a symphony of joy, capable of turning even the gloomiest days into hilarious adventures. From your adorable quirks to your infectious giggles, you bring a unique sparkle to every moment. It's as if the universe decided to create a masterpiece and ended up with you, a stunning blend of elegance and hilarity. You're truly one of a kind, my dear, and being around you is an absolute delight.</p>
+    <p>Aaato bhatboklam just to make sure my sister doesnt cry silently.</p>
+
+    <div class="image-container">
+      <img src="a.jpg" alt="Image 1" class="image active">
+      <img src="b.jpg" alt="Image 2" class="image">
+      <img src="l.jpeg" alt="Image 3" class="image">
+      <img src="f.jpeg" alt="Image 4" class="image">
+      <img src="k.jpeg" alt="Image 5" class="image">
+      <img src="c.jpg" alt="Image 6" class="image">
+      <img src="r.png" alt="Image 6" class="image">
+      <img src="p.png" alt="Image 6" class="image">
+      <img src="j.jpeg" alt="Image 7" class="image">
+      <img src="d.jpg" alt="Image 8" class="image">
+      <img src="g.jpeg" alt="Image 9" class="image">
+      <img src="e.jpeg" alt="Image 10" class="image">
+      <img src="s.png" alt="Image 6" class="image">
+      <img src="q.png" alt="Image 6" class="image">
+      <img src="h.jpeg" alt="Image 11" class="image">
+      <img src="t.png" alt="Image 12" class="image">
+      <img src="m.jpeg" alt="Image 13" class="image">
+      <img src="n.jpeg" alt="Image 14" class="image">
+    </div>
+
+    <div id="navigation">
+      <button id="prev-button" class="navigation-button">Previous</button>
+      <button id="next-button" class="navigation-button">Next</button>
+    </div>
+
+
+    <audio id="background-music" autoplay loop>
+        <source src="o.mp3" type="audio/mpeg">
+      </audio>
+    
+    <div class="volume-control">
+      <label for="volume-range">Volume:</label>
+      <input type="range" id="volume-range" min="0" max="1" step="0.1" value="1" onchange="setVolume(this.value)">
+    </div>
+
+
+
+    <div class="image-container">
+    <h2>Whatever may be, this guy is always there by your side.</h2>
+    <img src="i.jpeg" alt="Image 6" style="display: block; width: 500px; height: 500px">
+    </div>
+  </div>
+
+
+
+
+  <!-- Include Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const images = $('.image');
+      let currentIndex = 0;
+
+      images.eq(0).addClass('active');
+
+      $('#prev-button').click(function () {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+
+      $('#next-button').click(function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+
+      function showImage(index) {
+        images.removeClass('active');
+        images.eq(index).addClass('active');
+      }
+
+      setInterval(function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }, 3000);
+    });
+
+    function setVolume(volume) {
+      var audio = document.getElementById('background-music');
+      audio.volume = volume;
+    }
+  </script>
+</body>
+</html>
